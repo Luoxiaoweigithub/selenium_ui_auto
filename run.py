@@ -25,10 +25,9 @@ def get_args():
         cf.set_value('environment', 'product')
         cf.set_value('site', 'https://www.baidu.com/')
     else:
-        print u"请输入preview/product"
+        print ("请输入preview/product")
         exit()
 
-    # 配置Chrome Driver    # 配置Chrome Driver
 def set_driver():
     """设置driver"""
     # 配置Chrome Driver

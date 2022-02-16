@@ -41,7 +41,7 @@ class TestHome():
             assert self.home_page.wait_element(self.home_page.l_more_product)  # 有‘更多产品’element
             log.info(u'断言有‘更多产品’元素 成功')
             self.home_page.screenshot(u'打开百度首页')
-        except Exception, e:
+        except Exception as e:
             self.home_page.screenshot(u'打开百度首页失败')
             raise e
 
@@ -54,7 +54,7 @@ class TestHome():
             assert self.home_page.wait_text(u'星空物语_百度百科')  # 输入关键字自动跳搜索结果页，第一项是百科
             log.info(u'断言有‘星空物语_百度百科’文字 成功')
             self.home_page.screenshot(u'输入关键字跳转')
-        except Exception, e:
+        except Exception as e:
             self.home_page.screenshot(u'输入关键字跳转失败')
             raise e
 
@@ -66,7 +66,7 @@ class TestHome():
             assert self.home_page.wait_element(self.news_page.d_carousel)  # 轮播图出现
             log.info(u'断言有‘轮播图’元素 成功')
             self.home_page.screenshot(u'打开新闻')
-        except Exception, e:
+        except Exception as e:
             self.home_page.screenshot(u'打开新闻失败')
             raise e
 
@@ -77,7 +77,7 @@ class TestHome():
             self.home_page.click_hao123()  # 点击hao123
             assert self.home_page.wait_element(self.hao123_page.l_more_product)  # 腾讯链接出现
             log.info(u'断言有‘腾讯链接’ 成功')
-        except Exception, e:
+        except Exception as e:
             self.home_page.screenshot(u'打开hao123失败')
             raise e
 

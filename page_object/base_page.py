@@ -57,7 +57,7 @@ class BasePage(object):
             return True
         except TimeoutException:
             return False
-        except Exception, e:
+        except Exception as e:
             raise e
 
     def get_element(self, locator, sec=60):
@@ -73,7 +73,7 @@ class BasePage(object):
                 element = self.driver.find_element(by=by, value=value)
                 log.info(u'获取元素：%s' % locator)
                 return element
-            except Exception, e:
+            except Exception as e:
                 raise e
         else:
             return False
@@ -89,7 +89,7 @@ class BasePage(object):
             elements = WebDriverWait(self.driver, 60, 1).until(lambda x: x.find_elements(by=by, value=value))
             log.info(u'获取元素列表：%s' % locator)
             return elements
-        except Exception, e:
+        except Exception as e:
             raise e
 
     def get_url(self):
@@ -158,7 +158,7 @@ class BasePage(object):
             repeat += 1
             self.get_element(locator).click()
             log.info(u'点击元素：%s' % locator)
-        except Exception, e:
+        except Exception as e:
             log.info(u'点击元素：%s 第%s次执行失败' % (locator, repeat))
             if repeat > 2:
                 raise e

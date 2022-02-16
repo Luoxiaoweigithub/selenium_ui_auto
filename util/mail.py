@@ -39,7 +39,7 @@ def send_mail(sendto):
         smtp.connect(mail_host, 25)  # 25为 SMTP 端口号
         smtp.login(username, password)
         smtp.sendmail(username, receivers, message.as_string())
-        print u'邮件发送成功'
-    except Exception, e:
-        print u'邮件发送失败'
+        print("邮件发送成功")
+    except Exception as e:
+        print("邮件发送失败")
         raise e

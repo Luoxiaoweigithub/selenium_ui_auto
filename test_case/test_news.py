@@ -29,7 +29,7 @@ class TestSearch():
             self.news_page.move_QRcode()
             assert self.news_page.wait_element(self.news_page.im_QRcode)  # 判断二维码图片出现
             self.news_page.screenshot(u'显示二维码')
-        except Exception, e:
+        except Exception as e:
             self.news_page.screenshot(u'显示二维码失败')
             raise e
 
@@ -40,7 +40,7 @@ class TestSearch():
             self.news_page.click_carousel()  # 点击轮播图
             assert current_page_num + 1 == len(self.driver.window_handles)  # 判断打开了新的标签页
             self.news_page.close()  # 关闭新打开的页面
-        except Exception, e:
+        except Exception as e:
             self.news_page.screenshot(u'点击轮播图失败')
             raise e
 
@@ -50,7 +50,7 @@ class TestSearch():
             self.news_page.open_newspage()
             self.news_page.search(u'涨工资')  # 搜索涨工资
             assert self.news_page.wait_text(u'电视剧《一起来看流星雨》片头曲')  # 故意断言失败
-        except Exception, e:
+        except Exception as e:
             self.news_page.screenshot(u'搜索新闻失败')
             raise e
 
