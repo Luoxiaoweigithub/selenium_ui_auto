@@ -28,7 +28,7 @@ def get_args():
         print u"请输入preview/product"
         exit()
 
-
+    # 配置Chrome Driver    # 配置Chrome Driver
 def set_driver():
     """设置driver"""
     # 配置Chrome Driver
